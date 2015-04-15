@@ -145,7 +145,7 @@ return [
 		'Modelbook\Providers\ConfigServiceProvider',
 		'Modelbook\Providers\EventServiceProvider',
 		'Modelbook\Providers\RouteServiceProvider',
-		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
+        'Cviebrock\EloquentSluggable\SluggableServiceProvider',
 		'Laracasts\Flash\FlashServiceProvider',
         'Propaganistas\LaravelPhone\LaravelPhoneServiceProvider',        
         'Kodeine\Acl\AclServiceProvider',
