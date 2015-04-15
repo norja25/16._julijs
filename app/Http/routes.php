@@ -20,31 +20,33 @@
  * These are just static pages
  */
 Route::get('/', 'PagesController@home');
-Route::get('login', 'PagesController@login', ['before' => 'guest']);
+Route::get('login', 'PagesController@login', ['middleware' => 'auth']);
 Route::get('home', [
-    'before' => 'guest',
+    'middleware' => 'auth',
     'as' => 'home',
     'uses' =>'PagesController@index'
 ]);
 
 Route::get('messages', [
-    'before' => 'guest',
+    'middleware' => 'auth',
     'as' => 'messages',
     'uses' =>'PagesController@messages'
 ]);
 
 
 Route::get('procedure.create', [
-    'before' => 'guest',
+    'middleware' => 'auth',
     'as' => 'new.procedure',
     'uses' =>'PagesController@createProcedure'
 ]);
 
 Route::get('model.index', [
-    'before' => 'guest',
+    'middleware' => 'auth',
     'as' => 'index.model',
     'uses' =>'PagesController@indexModel'
 ]);
+
+
 /*
  * Registration and Authentication Laravel default
  */
@@ -82,10 +84,24 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::get("/sms", 'SmsController@index');
-Route::resource('sms', 'SmsController');
 
-# User Profile
 
-Route::get('/{user_profile}', 'UserProfilesController@show');
 
+
+
+
+Route::group(array('middleware' => 'auth'), function()
+{
+
+    Route::get('/sms', [
+        'middleware' => 'auth',
+        'as' => 'sms',
+        'uses' =>'SmsController@index'
+    ]);
+
+    Route::resource('sms', 'SmsController');
+
+
+    # User Profile
+    Route::get('/{user_profile}', 'UserProfilesController@show');
+});
