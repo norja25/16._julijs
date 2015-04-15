@@ -27,11 +27,6 @@ class HasPermission
         ],
     ];
 
-    /*public function __construct()
-    {
-        $this->crudConfigOverride();
-    }*/
-
     /**
      * Handle an incoming request.
      *
@@ -42,9 +37,12 @@ class HasPermission
     public function handle($request, Closure $next)
     {
         $this->request = $request;
+
+        // override crud resources via config
         $this->crudConfigOverride();
 
-        if ( ( ! $this->getAction('is') or $this->hasRole()) and
+        // if route has access
+        if (( ! $this->getAction('is') or $this->hasRole()) and
             ( ! $this->getAction('can') or $this->hasPermission()) and
             ( ! $this->getAction('protect_alias') or $this->protectMethods())
         ) {
@@ -127,7 +125,11 @@ class HasPermission
         // crud method is read, view, delete etc
         // match it against our permissions
         // view.user or delete.user
-        $permission = last(array_keys($crud)) . '.' . $this->parseAlias();
+        // multiple keys like create,store?
+        // use OR operator and join keys with alias.
+        $permission = implode('|', array_map(function ($e) {
+            return $e . '.' . $this->parseAlias();
+        }, array_keys($crud)));
 
         return ! $this->forbiddenRoute() && $request->user()->can($permission);
     }
@@ -212,12 +214,12 @@ class HasPermission
     protected function crudConfigOverride()
     {
         // Override crud restful from config.
-        if (($restful = config('acl.crud.restful')) != null) {
+        if ( ($restful = config('acl.crud.restful')) != null ) {
             $this->crud['restful'] = $restful;
         }
 
         // Override crud resource from config.
-        if (($resource = config('acl.crud.resource')) != null) {
+        if ( ($resource = config('acl.crud.resource')) != null ) {
             $this->crud['resource'] = $resource;
         }
     }

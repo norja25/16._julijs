@@ -148,8 +148,7 @@ return [
 		'Modelbook\Providers\RouteServiceProvider',
 		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
 		'Laracasts\Flash\FlashServiceProvider',
-        'Propaganistas\LaravelPhone\LaravelPhoneServiceProvider',
-        'Menu\MenuServiceProvider',
+        'Propaganistas\LaravelPhone\LaravelPhoneServiceProvider',        
         'Kodeine\Acl\AclServiceProvider',
 
 	],
@@ -202,7 +201,6 @@ return [
 		'Form'		=> 'Illuminate\Html\FormFacade',
 		'Html'		=> 'Illuminate\Html\HtmlFacade',
 		'Flash'		=> 'Laracasts\Flash\Flash',
-        'Menu'      => 'Menu\Menu',
 
 	],
 
