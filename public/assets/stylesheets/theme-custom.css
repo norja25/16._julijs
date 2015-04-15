@@ -1,0 +1,209 @@
+.page-header {
+background: #E7E7E7;
+
+border-left: 1px solid #3a3a3a;
+box-shadow: 1px 3px 0 1px #cccccc;
+
+}
+
+.sidebar-left {
+background: #EEEEEE;
+
+color: #777777;
+
+}
+
+
+.sidebar-left .sidebar-header .sidebar-toggle {
+
+background-color: #E7E7E7;
+
+}
+
+html.sidebar-left-collapsed.fixed .sidebar-left .nano {
+background: #E7E7E7;
+box-shadow: -5px 0 0 #cccccc inset;
+}
+
+ul.nav-main li a {
+
+color: #777777;
+
+}
+
+ul.nav-main > li.nav-expanded > a {
+background: #cccccc;
+}
+
+
+ul.nav-main li .nav-children {
+background: #E2E2E2; 
+box-shadow: 0px -3px 3px -3px rgba(0, 0, 0, 0.7) inset;
+display: none;
+padding: 10px 0;
+}
+
+ul.nav-main li .nav-children li a:hover, ul.nav-main li .nav-children li a:focus {
+background: #EEEEEE; /* Open menu hoover krāsa */ 
+}
+
+ul.nav-main > li > a:hover, ul.nav-main > li > a:focus {
+background-color: #AFAFAF;
+} /* Main menu hover kraasa*/
+
+ul.nav-main > li.nav-active > a:hover {
+color: #595A5C;
+} /* Main menu active hover kraasa*/
+
+
+html.fixed .sidebar-left {
+top: 60px;
+}
+
+html.fixed .page-header {
+top: 0px;
+}
+
+@media only screen and (min-width: 768px) {
+html.fixed .inner-wrapper {
+padding-top: 50px;
+}
+}
+
+ul.nav-main li.nav-parent > a:after {
+font-family: 'FontAwesome';
+content: '\f107';
+color: #555454;
+
+}
+
+
+@media only screen and (max-width: 800px) {
+	
+	/* Force table to not be like tables anymore */
+	#no-more-tables table, 
+	#no-more-tables thead, 
+	#no-more-tables tbody, 
+	#no-more-tables th, 
+	#no-more-tables td, 
+	#no-more-tables tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	#no-more-tables thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+ 
+	#no-more-tables tr { border: 1px solid #ccc; }
+ 
+	#no-more-tables td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+		text-align:left;
+	}
+ 
+	#no-more-tables td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+ 
+	/*
+	Label the data
+	*/
+	#no-more-tables td:before { content: attr(data-title); }
+}
+@media only screen and (min-width: 768px) {
+	html.sidebar-left-collapsed.scroll .sidebar-left .nav-main > li:hover, html.sidebar-left-collapsed.boxed .sidebar-left .nav-main > li:hover {
+		width: 300px;
+		background: #D5D5D5;
+	}
+}
+@media only screen and (min-width: 768px){
+	html.sidebar-left-collapsed.scroll .sidebar-left .nav-main li ul.nav-children, html.sidebar-left-collapsed.boxed .sidebar-left .nav-main li ul.nav-children {
+		position: absolute;
+		left: 67px;
+		width: 233px;
+		background: #E6E6E6;
+	}
+}
+
+
+.sidebar-left {
+box-shadow: -5px 0 0 #CCC inset;
+} 	/* Scroll wheel shadow */
+
+
+input.form-control.middle {
+	border-radius: 0px!important;
+}
+
+
+html .wizard-progress .wizard-steps li.completed a span, html.dark .wizard-progress .wizard-steps li.completed a span {
+    background: none repeat scroll 0% 0% rgba(122, 233, 89, 1);
+    color: #FFF; 	/* Form wizard completed green */
+} 
+
+.wizard-progress .wizard-steps li.completed a span {
+    border-color: #3BC555;
+    background: none repeat scroll 0% 0% #3BC555; /* Form wizard completed green */
+}
+
+/*#payment-datatable-editable_info{
+	display: none!important;
+}
+
+#payment-datatable-editable_paginate {
+	display: none!important;
+}*/
+
+@media only screen and (max-width: 767px) {
+	.content-body {
+	padding: 15px 15px 15px 15px;
+	}
+	.nav-tabs.nav-justified {
+	margin-bottom: -5px;
+}
+
+.input-group-icon textarea.form-control:first-child, .input-group-icon textarea.form-control:last-child, .input-search textarea.form-control:first-child, .input-search textarea.form-control:last-child {
+	border-radius: 4px!important;
+
+}
+
+.input-group-icon .input-group-addon + textarea.form-control, .input-search .input-group-addon + textarea.form-control {
+    padding-right: 12px!important;
+    padding-left: 36px!important;
+    font-size: 1.2rem;
+}
+
+
+.input-group-icon input.form-control, .input-search input.form-control {
+    font-size: 1.3rem;
+    padding-right: 36px;
+}
+
+#procedure-dropdown{
+	width: 100%;
+}
+
+.timeline .tm-items > li .tm-box:after {
+    border-color: transparent #E54389 transparent transparent!important;
+}
+
+.timeline .tm-title {
+    background-color: rgba(248, 248, 248, 1)!important;
+}

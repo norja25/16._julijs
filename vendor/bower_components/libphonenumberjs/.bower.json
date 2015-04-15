@@ -1,0 +1,27 @@
+{
+  "name": "libphonenumberjs",
+  "authors": [
+    "Nick Chistyakov <chikolad@gmail.com>"
+  ],
+  "description": "Compiled to JavaScript Goole libphonenumber library",
+  "main": "libphonenumber.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "https://github.com/kolach/libphonenumberjs",
+  "_release": "a65f42172c",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "a65f42172cdf2a83221372a5deafa97941b05652"
+  },
+  "_source": "git://github.com/kolach/libphonenumberjs.git",
+  "_target": "*",
+  "_originalSource": "libphonenumberjs",
+  "_direct": true
+}

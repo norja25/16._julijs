@@ -1,0 +1,169 @@
+.uzruna {
+display: inline;
+width: auto;
+background-color: #f5f5f5;
+border: 1px solid #f5f5f5;
+}
+
+input.uzruna:focus {
+    outline-width: 0;
+}
+.rw-wrapper{
+	width: 80%;
+	position: relative;
+	margin: 110px auto 0 auto;
+	padding: 10px;
+}
+.rw-sentence{
+	margin: 0;
+	text-align: left;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+}
+.rw-sentence span{
+	color: #444;
+	font-size: 200%;
+	font-weight: normal;
+}
+.rw-words{
+	display: inline;
+	text-indent: 10px;
+}
+.rw-words-1 span{
+	position: absolute;
+	opacity: 0;
+	overflow: hidden;
+	color: #6b969d;
+	-webkit-animation: rotateWord 32s linear infinite 0s;
+	-ms-animation: rotateWord 32s linear infinite 0s;
+	animation: rotateWord 32s linear infinite 0s;
+}
+.rw-words-1 span:nth-child(2) { 
+    -webkit-animation-delay: 2s; 
+	-ms-animation-delay: 2s; 
+	animation-delay: 2s; 
+	color: #6b889d;
+}
+.rw-words-1 span:nth-child(3) { 
+    -webkit-animation-delay: 4; 
+	-ms-animation-delay: 4s; 
+	animation-delay: 4s; 
+	color: #6b739d;	
+}
+.rw-words-1 span:nth-child(4) { 
+    -webkit-animation-delay: 6s; 
+	-ms-animation-delay: 6; 
+	animation-delay: 6s; 
+	color: #7a6b9d;
+}
+.rw-words-1 span:nth-child(5) { 
+    -webkit-animation-delay: 8s; 
+	-ms-animation-delay: 8s; 
+	animation-delay: 8s; 
+	color: #8d6b9d;
+}
+.rw-words-1 span:nth-child(6) { 
+    -webkit-animation-delay: 10s; 
+	-ms-animation-delay: 10s; 
+	animation-delay: 10s; 
+	color: #9b6b9d;
+}
+.rw-words-1 span:nth-child(7) { 
+    -webkit-animation-delay: 12s; 
+	-ms-animation-delay: 12; 
+	animation-delay: 12s; 
+	color: #9b6b9d;
+}
+.rw-words-1 span:nth-child(8) { 
+    -webkit-animation-delay: 14s; 
+	-ms-animation-delay: 14s; 
+	animation-delay: 14s; 
+	color: #9b6b9d;
+}
+.rw-words-1 span:nth-child(9) { 
+    -webkit-animation-delay: 16s; 
+	-ms-animation-delay: 16s; 
+	animation-delay: 16s; 
+	color: #9b6b9d;
+}
+.rw-words-1 span:nth-child(10) { 
+    -webkit-animation-delay: 18s; 
+	-ms-animation-delay: 18s; 
+	animation-delay: 18s; 
+	color: #9b6b9d;
+}
+.rw-words-1 span:nth-child(11) { 
+    -webkit-animation-delay: 20s; 
+	-ms-animation-delay: 20s; 
+	animation-delay: 20s; 
+	color: #9b6b9d;
+}
+.rw-words-1 span:nth-child(12) { 
+    -webkit-animation-delay: 22s; 
+	-ms-animation-delay: 22s; 
+	animation-delay: 22s; 
+	color: #9b6b9d;
+}
+.rw-words-1 span:nth-child(13) { 
+    -webkit-animation-delay: 24s; 
+	-ms-animation-delay: 24s; 
+	animation-delay: 24s; 
+	color: #9b6b9d;
+}
+.rw-words-1 span:nth-child(14) { 
+    -webkit-animation-delay: 26s; 
+	-ms-animation-delay: 26s; 
+	animation-delay: 26s; 
+	color: #9b6b9d;
+}
+.rw-words-1 span:nth-child(15) { 
+    -webkit-animation-delay: 28s; 
+	-ms-animation-delay: 28s; 
+	animation-delay: 28s; 
+	color: #9b6b9d;
+}
+.rw-words-1 span:nth-child(16) { 
+    -webkit-animation-delay: 30s; 
+	-ms-animation-delay: 30s; 
+	animation-delay: 30s; 
+	color: #9b6b9d;
+}
+
+@-webkit-keyframes rotateWord {
+    0% { opacity: 0; }
+    2% { opacity: 0; -webkit-transform: translateY(-30px); }
+	5% { opacity: 1; -webkit-transform: translateY(0px);}
+    17% { opacity: 1; -webkit-transform: translateY(0px); }
+	20% { opacity: 0; -webkit-transform: translateY(0px); }
+	80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@-ms-keyframes rotateWord {
+    0% { opacity: 0; }
+    2% { opacity: 0; -ms-transform: translateY(-30px); }
+	5% { opacity: 1; -ms-transform: translateY(0px);}
+    17% { opacity: 1; -ms-transform: translateY(0px); }
+	20% { opacity: 0; -ms-transform: translateY(0px); }
+	80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@keyframes rotateWord {
+    0% { opacity: 0; }
+    2% { opacity: 0; -webkit-transform: translateY(-30px); transform: translateY(-30px); }
+	5% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px);}
+    17% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px); }
+	20% { opacity: 0; -webkit-transform: translateY(0px); transform: translateY(0px); }
+	80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@media screen and (max-width: 768px){
+	.rw-sentence { font-size: 18px; }
+}
+@media screen and (max-width: 320px){
+	.rw-sentence { font-size: 9px; }
+}
+
+.bg {
+    background-color:#f5f5f5;
+    padding: 0px 45px 0px 0px;
+    top: 21px;
+}

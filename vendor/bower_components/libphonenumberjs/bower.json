@@ -1,0 +1,17 @@
+{
+  "name": "libphonenumberjs",
+  "version": "0.0.1",
+  "authors": [
+    "Nick Chistyakov <chikolad@gmail.com>"
+  ],
+  "description": "Compiled to JavaScript Goole libphonenumber library",
+  "main": "libphonenumber.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Modelbook
+        psr4_prefix: Modelbook
+        src_path: app

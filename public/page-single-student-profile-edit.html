@@ -1,0 +1,193 @@
+<!doctype html>
+<html class="boxed no-mobile-device sidebar-left-collapsed custom-scroll sidebar-left-xs">
+<head>
+
+	<!-- Basic -->
+	<meta charset="UTF-8">
+
+	<title>Zane Zeltiņa - Profile info for school</title>
+	<meta name="keywords" content="HTML5 Admin Template" />
+	<meta name="description" content="Porto Admin - Responsive HTML5 Template">
+	<meta name="author" content="okler.net">
+
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<!-- Web Fonts  -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+	<!-- Vendor CSS -->
+	<link rel="stylesheet" href="vendor/bootstrap/bootstrap.css" />
+	<link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css" />
+	<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css" />
+
+
+	<link rel="stylesheet" href="vendor/bootstrap-multiselect/bootstrap-multiselect.css" />
+	<link rel="stylesheet" href="vendor/select2/select2.css" />
+
+	<!-- Specific Page Vendor CSS -->
+	<link rel="stylesheet" href="vendor/pnotify/pnotify.custom.css" />
+	<link rel="stylesheet" href="vendor/datetimepicker/jquery.datetimepicker.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" href="assets/stylesheets/theme.css" />
+
+	<!-- Skin CSS -->
+	<link rel="stylesheet" href="assets/stylesheets/skins/default.css" />
+
+	<!-- Theme Custom CSS -->
+	<link rel="stylesheet" href="assets/stylesheets/theme-custom.css">
+
+	<!-- Head Libs -->
+	<script src="vendor/modernizr/modernizr.js"></script>
+
+</head>
+<body>
+	<section class="body">
+
+		<!-- start: header -->
+		<header class="header">
+			<div class="logo-container">
+				<a href="index.html" class="logo">
+					<img src="assets/images/logo.png" height="35" alt="Porto Admin" />
+				</a>
+				<div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
+					<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+				</div>
+			</div>
+			
+			<!-- start: search & user box -->
+			@include('backend.layouts.partials.admin-header')
+			<!-- end: search & user box -->
+		</header>
+		<!-- end: header -->
+
+		<div class="inner-wrapper">
+			<!-- start: sidebar -->
+			<aside id="sidebar-left" class="sidebar-left">				
+				@include('backend.layouts.partials.sidebar-left')				
+			</aside>
+			<!-- end: sidebar -->
+
+			<section role="main" class="content-body">
+
+				<!-- start: page -->
+
+				@include('flash::message')
+				@yield('content')
+
+				<!-- end: page -->
+			</section>
+		</div>
+	</section>
+
+	<!-- Vendor -->
+	<script src="vendor/jquery/jquery.js"></script>
+	<script src="vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+	<script src="vendor/bootstrap/bootstrap.js"></script>
+	<script src="vendor/nanoscroller/nanoscroller.js"></script>
+
+	<script src="vendor/magnific-popup/magnific-popup.js"></script>
+
+
+
+	<!-- Specific Page Vendor -->
+	<script src="vendor/jquery.appear/jquery.appear.js"></script>
+	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script src="vendor/gmaps/gmaps.js"></script>
+
+	<script src="vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
+	<script src="vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>		
+
+	<script src="vendor/pnotify/pnotify.custom.js"></script>
+
+	<script src="vendor/jquery-maskedinput/jquery.maskedinput.js"></script>		
+
+	<script src="vendor/select2/select2.js"></script>	
+	<script src="vendor/datetimepicker/jquery.datetimepicker.js"></script>
+	<script>
+		$(document).ready(function(){
+
+			var d = new Date();
+			d.setDate(d.getDate() + 2);
+			var month = d.getMonth()+1;
+			var day = d.getDate();
+			var output = d.getFullYear() + '-' + (month<10 ? '0' : '') + month + '-' + (day<10 ? '0' : '') + day;
+
+			$('.form_datetime').datetimepicker({
+				validateOnBlur: false,
+				timepicker:false,
+				format:'d.m.Y',
+				closeOnDateSelect:true,
+				yearEnd: d.getFullYear() + 2,
+				yearStart: d.getFullYear() - 20
+			});
+		});
+	</script>	
+
+	<!-- Theme Base, Components and Settings -->
+	<script src="assets/javascripts/theme.js"></script>
+
+	<!-- Theme Custom -->
+	<script src="assets/javascripts/theme.custom.js"></script>
+
+	<!-- Theme Initialization Files -->
+	<script src="assets/javascripts/theme.init.js"></script>
+
+	<!-- Examples -->
+	<script src="assets/javascripts/pages/examples.timeline.js"></script>
+
+	<script src="assets/javascripts/tables/examples.datatables.editable.js"></script>
+
+	<script>
+		(function( $ ) {
+
+			'use strict';
+
+	/*
+	Modal with CSS animation
+	*/
+	$('.modal-with-zoom-anim').magnificPopup({
+		type: 'inline',
+
+		fixedContentPos: false,
+		fixedBgPos: true,
+
+		overflowY: 'auto',
+
+		closeBtnInside: true,
+		preloader: false,
+		
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-zoom-in',
+		modal: true
+	});
+
+	/*
+	Modal Dismiss
+	*/
+	$(document).on('click', '.edit-dismiss', function (e) {
+		e.preventDefault();
+		$.magnificPopup.close();
+	});
+
+	/*
+	Modal Confirm
+	*/
+	$(document).on('click', '.edit-confirm', function (e) {
+		e.preventDefault();
+		$.magnificPopup.close();
+
+		new PNotify({
+			title: 'Success!',
+			text: 'Student information updated.',
+			type: 'success'
+		});
+	});
+
+}).apply( this, [ jQuery ]);
+	</script>			
+
+</body>
+</html>
