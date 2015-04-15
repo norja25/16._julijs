@@ -53,4 +53,9 @@ class PagesController extends Controller {
     {
         return view('pages.procedure.create');
     }
+
+    public function indexModel()
+    {
+        return view('pages.model.index');
+    }
 }

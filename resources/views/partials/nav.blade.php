@@ -20,10 +20,7 @@
                     <li>
                         <a data-hash href="#features">Features</a>
                     </li>
-                    <li>
-                        link_to_route('users_path', 'Browse Users') 
-                    </li>
-                    
+
                     <li>
                         <a data-hash href="#contact">Contact Us</a>
                     </li>

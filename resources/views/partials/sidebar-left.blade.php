@@ -21,7 +21,7 @@
 										<span>Messages</span>
 									</a>
 								</li>
-								<li class="nav-parent {{ set_expanded(['procedure.create', 'procedure.create1']) }}">
+								<li class="nav-parent {{ set_expanded(['procedure.create', 'model.index']) }}">
 									<a>
 										<i class="fa fa-child" aria-hidden="true"></i>
 										<span>Model booking</span>
@@ -31,9 +31,9 @@
 											<a href="{{ action('PagesController@createProcedure') }}">
 												Find new model
 											</a>
-										</li>											
-										<li>
-											<a href="page-model-list.html">
+										</li>
+                                        <li class="{{set_active('model.index')}}">
+											<a href="{{ action('PagesController@indexModel') }}">
 												Model list
 											</a>
 										</li>
@@ -117,6 +117,13 @@
 										</li>
 									</ul>
 								</li>
+                                <li class="{{set_active('sms')}}">
+                                    <a href="{{ action('SmsController@index') }}">
+                                        <span class="pull-right label label-primary">182</span>
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        <span>Send SMS</span>
+                                    </a>
+                                </li>
 							</ul>
 						</nav>				
 

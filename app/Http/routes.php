@@ -39,6 +39,12 @@ Route::get('procedure.create', [
     'as' => 'new.procedure',
     'uses' =>'PagesController@createProcedure'
 ]);
+
+Route::get('model.index', [
+    'before' => 'guest',
+    'as' => 'index.model',
+    'uses' =>'PagesController@indexModel'
+]);
 /*
  * Registration and Authentication Laravel default
  */
