@@ -36,7 +36,8 @@ class SmsRepository {
         ]);
         $result = $response->getBody();
         $carier = preg_match('/alert\(\s*"(.+?)"\s*\)/', $result, $matches);
-       dd( $carier );
+        //return $matches[1];
+        return $carier;
     }
 
     public function sendWellcomeSmsWithPasswordToRegistredUser(User $user, $password)
