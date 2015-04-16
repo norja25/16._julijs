@@ -8,7 +8,8 @@
 @section('content')
 
 <div class="row">
-    {{ $response }}
+    
+    {{ $response['result']['total'] }}
 </div>
 
 
