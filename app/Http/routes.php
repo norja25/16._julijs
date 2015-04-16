@@ -98,9 +98,14 @@ Route::group(array('middleware' => 'auth'), function()
         'as' => 'sms',
         'uses' =>'SmsController@index'
     ]);
+    
+    Route::get('sendsinglesms', [
+        'as' => 'indexContacts',
+        'uses' =>'SmsController@indexContacts'
+    ]);
+
 
     Route::resource('sms', 'SmsController');
-
 
     # User Profile
     Route::get('/{user_profile}', 'UserProfilesController@show');
