@@ -62,8 +62,8 @@ Route::get('send', [
     'uses' =>'Auth\AuthController@sendMails'
 ]);
 
-Route::get('delete', [
-    'as' => 'register_path',
+Route::get('delete/{id}', [
+    'as' => 'delete_path',
     'uses' =>'Auth\AuthController@destroy'
 ]);
 
