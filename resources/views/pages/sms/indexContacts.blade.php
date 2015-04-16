@@ -9,7 +9,7 @@
 
     <div class="row">
         <div class=" col-sm-offset-3 col-sm-6">
-            {!! Form::open(['method' => 'POST', 'route' => 'sms.sendSingleSms', 'class' => 'well']) !!}
+            {!! Form::open(['method' => 'POST', 'class' => 'well']) !!}
             <div class="form-group">
                 {!!  Form::label('text', 'Ziņa GuP Jaunišu ģimenei:' )  !!}
                 {!!  Form::textarea('smsmessage', null, ['class' => 'form-control textarea', 'required', 'rows' => 4, 'data-toggle' => 'tooltip', 'data-placement' => 'right', 'title' => 'Pirms īsziņās tiks ielikts personalizēts sveicies Piem: Čau Mārtiņ!', 'maxlength' => '1000'])  !!}
