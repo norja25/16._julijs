@@ -14,6 +14,16 @@ class SmsController extends Controller {
     {
         return view('pages.sms.send');
     }
+    
+    public function indexContacts()
+    {
+        $username = getenv('SMS_GATEWAY_EMAIL');
+        $password = getenv('SMS_GATEWAY_PW');
+        $smsGateway = new SmsGateway($username, $password);
+        $page = 1;
+        $result = $smsGateway->getContacts($page);
+        return view('pages.sms.indexContacts', $result);
+    }
 
     public function store(Request $request)
 
