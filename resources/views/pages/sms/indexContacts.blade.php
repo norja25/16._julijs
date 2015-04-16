@@ -8,8 +8,9 @@
 @section('content')
 
 <div class="row">
-    
-    {{ $response['result']['total'] }}
+    @foreach (response['result']['total']['data'] as $user)
+        <p>This is user {{ $user->id }}</p>
+    @endforeach
 </div>
 
 
