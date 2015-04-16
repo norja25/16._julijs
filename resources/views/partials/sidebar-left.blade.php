@@ -117,12 +117,24 @@
 										</li>
 									</ul>
 								</li>
-                                <li class="{{set_active('sms')}}">
-                                    <a href="{{ action('SmsController@index') }}">
-                                        <span class="pull-right label label-primary">182</span>
-                                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                                        <span>Send SMS</span>
+                                <li class="nav-parent {{ set_expanded(['sms', 'sendsinglesms']) }}">
+                                    <a>
+                                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                        <span>SMS</span>
                                     </a>
+                                    <ul class="nav nav-children">
+                                        <li class="{{set_active('sms')}}">
+                                            <a href="{{ action('SmsController@index') }}">
+                                                Send SMS to Youth
+                                            </a>
+                                        </li>
+                                        <li class="{{set_active('sendsinglesms')}}">
+                                            <a href="{{ action('SmsController@indexContacts') }}">
+                                                <i class="fa fa-circle-o-notch fa-spin"></i>
+                                                Send Single SMS
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
 							</ul>
 						</nav>				
