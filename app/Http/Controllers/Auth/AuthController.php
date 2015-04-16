@@ -80,9 +80,9 @@ class AuthController extends Controller {
         return redirect('login');
     }
 
-    public function destroy()
+    public function destroy($id)
     {
-        $userid = 5;
+        $userid = $id;
         User::destroy($userid);
         return 'User ' . $userid . ' deleted';
     }
