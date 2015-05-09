@@ -131,6 +131,11 @@ class SmsController extends Controller {
         ];
         $data[] = [
             'device' =>  $deviceID,
+            'number' => '+37129782041',
+            'message' => $uzruna.' Kristiān! '.$smsmessage,
+        ];        
+        $data[] = [
+            'device' =>  $deviceID,
             'number' => '+37128774573',
             'message' => $uzruna.' mīļā sieviņa! '.$smsmessage,
         ];
