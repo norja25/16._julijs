@@ -99,7 +99,12 @@ Route::group(array('middleware' => 'auth'), function()
         'uses' =>'SmsController@index'
     ]);
     
-    Route::get('contacts', [
+    Route::post('sendsinglesms', [
+        'as' => 'sendSingle',
+        'uses' =>'SmsController@sendSingle'
+    ]);
+
+    Route::get('sendsinglesms', [
         'as' => 'indexContacts',
         'uses' =>'SmsController@indexContacts'
     ]);

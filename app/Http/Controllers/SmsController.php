@@ -25,6 +25,32 @@ class SmsController extends Controller {
         return view('pages.sms.indexContacts', $result);
     }
 
+    public function sendSingle(Request $request)
+    {
+        $smsmessage = $request->input('smsmessage');
+        $zaiga = 7889;
+        $rolands = 6507;
+        $deviceID = $rolands;
+        $phone = $request->input('phone_number');
+        $username = getenv('SMS_GATEWAY_EMAIL');
+        $password = getenv('SMS_GATEWAY_PW');
+
+        $smsGateway = new smsGateway($username, $password);
+
+        $data[] = [
+            'device'  =>    $deviceID,
+            'number'  =>    $phone,
+            'message' =>    $smsmessage,
+        ];
+
+        $smsGateway->sendManyMessages($data);
+
+        flash()->success('SMS veiksmīgi tika nosūtīts');
+        $page = 1;
+        $result = $smsGateway->getContacts($page);
+        return view('pages.sms.indexContacts', $result);
+    }
+
     public function store(Request $request)
 
     {
