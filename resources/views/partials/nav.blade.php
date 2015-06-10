@@ -17,6 +17,9 @@
                     <li class="active">
                         <a data-hash href="/">Home</a>
                     </li>
+                    <li class="active">
+                        <a data-hash href="/">Home2</a>
+                    </li>                    
                     <li>
                         <a data-hash href="#features">Features</a>
                     </li>
