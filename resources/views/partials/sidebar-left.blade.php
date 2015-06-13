@@ -23,7 +23,7 @@
 								</li>
 								<li class="nav-parent {{ set_expanded(['schools', 'school/create']) }}">
 									<a>
-										<i class="fa fa-child" aria-hidden="true"></i>
+										<i class="fa fa-university" aria-hidden="true"></i>
 										<span>Manage schools</span>
 									</a>
 									<ul class="nav nav-children">
