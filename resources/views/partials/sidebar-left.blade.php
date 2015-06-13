@@ -21,6 +21,24 @@
 										<span>Messages</span>
 									</a>
 								</li>
+								<li class="nav-parent {{ set_expanded(['schools', 'school/create']) }}">
+									<a>
+										<i class="fa fa-child" aria-hidden="true"></i>
+										<span>Manage schools</span>
+									</a>
+									<ul class="nav nav-children">
+                                        <li class="{{set_active('schools')}}">
+											<a href="{{ asset('schools') }}">
+												School list
+											</a>
+										</li>									
+										<li class="{{set_active('school/create')}}">
+											<a href="{{ asset('school/create') }}">
+												Create new school
+											</a>
+										</li>
+									</ul>
+								</li>
 								<li class="nav-parent {{ set_expanded(['procedure.create', 'model.index']) }}">
 									<a>
 										<i class="fa fa-child" aria-hidden="true"></i>
