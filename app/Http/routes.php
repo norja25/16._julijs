@@ -114,4 +114,9 @@ Route::group(array('middleware' => 'auth'), function()
 
     # User Profile
     Route::get('/{user_profile}', 'UserProfilesController@show');
+
+    # Create School profile 
+    Route::get('/school/create', function(){
+        return view('pages.school.create');
+    });
 });
