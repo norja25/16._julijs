@@ -119,4 +119,9 @@ Route::group(array('middleware' => 'auth'), function()
     Route::get('/school/create', function(){
         return view('pages.school.create');
     });
+
+    # Edit Company profile 
+    Route::get('/school/edit', function(){
+        return view('pages.school.edit');
+    });    
 });

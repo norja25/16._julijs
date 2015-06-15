@@ -154,6 +154,19 @@
                                         </li>
                                     </ul>
                                 </li>
+								<li class="nav-parent {{ set_expanded(['schools', 'school/edit']) }}">
+									<a>
+										<i class="fa fa-gear" aria-hidden="true"></i>
+										<span>Manage company</span>
+									</a>
+									<ul class="nav nav-children">									
+										<li class="{{set_active('school/edit')}}">
+											<a href="{{ asset('school/edit') }}">
+												Edit my settings
+											</a>
+										</li>
+									</ul>
+								</li>                                
 							</ul>
 						</nav>				
 
