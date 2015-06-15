@@ -21,6 +21,7 @@
 
 // GUI
 // -----------------------------------------------------------------------------
+@import "gui/loading_overlay";
 @import "gui/images";
 @import "gui/buttons";
 @import "gui/notifications";
@@ -29,6 +30,7 @@
 @import "gui/pagination";
 @import "gui/progress_bar";
 @import "gui/sidebar_widgets";
+@import "gui/scroll_to_top";
 
 // MODULES
 // -----------------------------------------------------------------------------
@@ -52,6 +54,7 @@
 @import "modules/ui-elements/widgets";
 @import "modules/ui-elements/nav-pills";
 @import "modules/ui-elements/portlet";
+@import "modules/ui-elements/loading-progress";
 @import "modules/tables/tables";
 @import "modules/tables/datatables";
 @import "modules/tables/pricing";

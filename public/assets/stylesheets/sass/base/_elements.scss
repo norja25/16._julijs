@@ -306,3 +306,95 @@ ol {
 .thumbnail-gallery .thumbnail {
 	margin: 10px 10px 0 0;
 }
+
+// NAVS
+// -----------------------------------------------------------------------------
+/* Navs */
+ul.nav-list.primary > li {
+	margin: 0;
+	padding: 0;
+
+	&:last-child {
+		a {
+			border-bottom: transparent !important;
+		}
+	}
+
+	a {
+		@include transition( all .3s );
+		background-position: 9px 16px;
+		background-repeat: no-repeat;
+		border-bottom: 1px solid #EDEDDE;
+		padding: 8px 20px;
+	}
+}
+
+// CHANGELOG
+// -----------------------------------------------------------------------------
+.changelog {
+	h4 {
+		display: inline-block;
+		color: #000;
+		font-size: 1em;
+		font-weight: $font-weight-semibold;
+	}
+	.release-date {
+		color: #999;
+		font-size: 0.9em;
+	}
+	.label {
+		display: inline-block;
+		min-width: 100px;
+	}
+}
+
+// SCROLLABLE
+// -----------------------------------------------------------------------------
+.scrollable {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	.scrollable-content {
+		bottom: 0;
+		left: 0;
+		overflow: hidden;
+		position: absolute;
+		right: 0;
+		top: 0;
+		padding: 0 37px 0 0;
+		overflow-x: hidden;
+		overflow-y: scroll;
+
+		&::-webkit-scrollbar {
+			visibility: hidden;
+		}
+	}
+	.scrollable-pane {
+		bottom: 0;
+		opacity: 0.01;
+		position: absolute;
+		right: 5px;
+		top: 0;
+		transition: all 0.2s ease 0s;
+		width: 4px;
+	}
+	.scrollable-slider {
+		border-radius: 5px;
+		background: none repeat scroll 0 0 #CCC;
+		margin: 0;
+		position: relative;
+		transition: opacity 0.2s ease 0s;
+		opacity: 0;
+	}
+	&.scrollable-padding {
+		.scrollable-content {
+			padding: 10px 24px 10px 10px;
+		}
+	}
+	&:hover, &.visible-slider {
+		.scrollable-slider {
+			opacity: 1;
+		}
+	}
+}
+

@@ -179,3 +179,13 @@
 		max-width: 900px;
 	}
 }
+
+// DARK
+// -----------------------------------------------------------------------------
+/* Dark */
+html.dark {
+	.white-popup-block,
+	.dialog {
+		background: $dark-bg;
+	}
+}

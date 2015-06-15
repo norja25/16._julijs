@@ -92,6 +92,12 @@
 @media only screen and (min-width: 768px) {
 	html.sidebar-left-collapsed {
 		.sidebar-left {
+
+			.nano {
+				background: $sidebar-background;
+				box-shadow: -$sidebar-border-width 0 0 $sidebar-border-color inset;
+			}
+
 			.sidebar-title {
 				margin-left: -$sidebar-left-full-width;
 				opacity: 0;
@@ -115,7 +121,7 @@
 							display: none;
 						}
 
-						ul.nav-children {
+						> ul.nav-children {
 							display: none;
 						}
 					}
@@ -132,94 +138,53 @@
 				display: none;
 			}
 		}
+	}
 
-		// boxed and scroll
-		&.scroll,
-		&.boxed {
-			.sidebar-left {
-				overflow: visible;
-
-				.nav-main {
-
-					li {
-						&.nav-active {
-							a:hover {
-								color: $color-primary;
-							}
-						}
-
-						&.nav-expanded {
-							background: transparent;
-
-							ul.nav-children {
-								display: none;
-							}
-						}
-
-						// children
-						ul.nav-children {
-							position: absolute;
-							left: $sidebar-left-collapsed-width - ($menu-item-active-border-width + 4);
-							width: $sidebar-left-full-width - $sidebar-left-collapsed-width + ($menu-item-active-border-width + 4);
-							background: $menu-item-active-background;
-						}
-					}
-
-		// NAV HOVER
-		// -----------------------------------------------------------------------------
-					& > li:hover {
-						width: $sidebar-left-full-width;
-						background: $menu-item-active-background;
-
-						& > a {
-							background: transparent;
-
-							i {
-								margin-right: 22px;
-							}
-
-							span {
-								display: inline;
-								visibility: visible;
-							}
-
-							span.label {
-								background-color: $color-primary;
-								color: $color-primary-inverse;
-							}
-						}
-
-						& > ul.nav-children {
-							display: block;
-
-							li a {
-								padding-left: 15px;
-							}
-						}
-
-					}
-
-				}
-
-
-			}
-		}
-
-		// fixed
-		&.fixed {
-			.sidebar-left {
-				.nano {
-					background: $sidebar-background;
-					box-shadow: -$sidebar-border-width 0 0 $sidebar-border-color inset;
-				}
-			}
-
-			.sidebar-left .nano:hover {
+	// auto expand on hover
+	html.sidebar-left-collapsed {
+		.sidebar-left {
+			.nano:hover {
 				width: $sidebar-left-full-width;
 
 				.nav-main {
 					.nav-expanded {
-						ul.nav-children {
+						> ul.nav-children {
+							display: block;
+						}
+					}
+
+					li {
+						// has children
+						&.nav-parent {
+							// arrow
+							a:after {
+								display: inline-block;
+							}
+						}
+
+						// text
+						a span {
+							visibility: visible;
+						}
+					}
+				}
+
+				.sidebar-widget,
+				.separator {
+					display: block;
+				}
+			}
+		}
+	}
+
+	html.sidebar-left-collapsed.sidebar-left-opened {
+		.sidebar-left {
+			.nano {
+				width: $sidebar-left-full-width;
+
+				.nav-main {
+					.nav-expanded {
+						> ul.nav-children {
 							display: block;
 						}
 					}

@@ -125,4 +125,19 @@
 		-webkit-box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.1);
 		box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.1);
 	}
-}	
+}
+
+// DARK
+// -----------------------------------------------------------------------------
+/* dark */
+html.dark {
+	.dd-handle {
+		background: $dark-color-3;
+		border-color: $dark-color-2;
+		color: $dark-default-text;
+
+		&:hover {
+			background: $dark-color-2;
+		}
+	}
+}

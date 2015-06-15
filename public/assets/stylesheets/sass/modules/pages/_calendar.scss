@@ -632,3 +632,26 @@ a.fc-event.fc-event-default:hover {
 		margin-bottom: 30px;
 	}
 }
+
+// DARK SKIN
+// -----------------------------------------------------------------------------\
+/* dark */
+html.dark {
+	.fc .fc-header-title h2 {
+		color: #FFF;
+	}
+
+	.ui-state-highlight.fc-today,
+	.fc .ui-widget-header,
+	.fc-widget-content,
+	.fc-state-disabled,
+	.fc-state-disabled .fc-button-inner {
+		border-color: rgba(0, 0, 0, 0.3);
+	}
+
+	.fc-content {
+		.fc-widget-content.fc-today {
+			background: $dark-color-2;
+		}
+	}
+}

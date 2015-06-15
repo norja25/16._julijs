@@ -177,3 +177,31 @@
 		}
 	}
 }
+
+// DARK SKIN
+// -----------------------------------------------------------------------------\
+/* dark */
+html.dark {
+	.invoice {
+		header {
+			border-bottom-color: $dark-color-3;
+		}
+
+		table.table {
+			> thead:first-child {
+				> tr {
+					> th {
+						background-color: $dark-color-3;
+						border-bottom-color: $dark-color-3;
+						border-top-color: $dark-color-3;
+					}
+				}
+			}
+
+			> tbody tr > td {
+				border-color: $dark-color-3;
+			}
+		}
+	}
+
+}

@@ -47,7 +47,8 @@
 	position: absolute;
 	top: 15px;
 
-	a {
+	a,
+	.panel-action {
 		background-color: $panel-action-background;
 		border-radius: $panel-action-border-radius;
 		color: $panel-action-color;
@@ -392,7 +393,45 @@ html .panel .panel-heading-transparent {
 		border-radius: 0 $border-radius $border-radius 0;
 		margin-top: 0;
 	}
+}
 
+// ACTIONS
+// -----------------------------------------------------------------------------
+.panel-action-toggle,
+.panel-action-dismiss {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.panel-action-toggle {
+	&:before {
+		content: "\f0d7";
+	}
+
+	.panel-collapsed & {
+		&:before {
+			content: "\f0d8";
+		}
+	}
+}
+
+.panel-action-dismiss {
+	&:before {
+		content: "\f00d";
+	}
+}
+
+// COLLAPSED
+// -----------------------------------------------------------------------------
+.panel-collapsed {
+	.panel-body,
+	.panel-footer {
+		display: none;
+	}
 }
 
 // RESPONSIVE

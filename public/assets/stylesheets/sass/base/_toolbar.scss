@@ -77,8 +77,9 @@
 /* Toolbar - Responsive */
 @media only screen and (max-width: 767px) {
 	.inner-toolbar {
-		padding: 0 15px;
+		clear: both;
 		margin: -40px -15px 30px;
+		padding: 0 15px;
 
 		ul {
 			& > li {
@@ -90,7 +91,6 @@
 			}
 
 			& > li.right {
-				float: none;
 				padding-left: 0;
 				padding-right: 0;
 			}
@@ -103,6 +103,11 @@
 		.nav-pills a {
 			padding-left: 10px;
 			padding-right: 10px;
+		}
+		ul > li.right {
+			clear: both;
+			float: none;
+			vertical-align: top;
 		}
 	}
 }
@@ -118,6 +123,20 @@
 			position: fixed;
 			top: $header-height + $page-header-height + 4;
 			z-index: $inner-toolbar-z-index;
+		}
+	}
+}
+
+// DARK
+// -----------------------------------------------------------------------------
+/* dark */
+html.dark {
+	.inner-toolbar {
+		border-left: none;
+		border-bottom: 1px solid darken($dark-color-4, 5%);
+
+		> ul > li {
+			border-color: darken($dark-color-4, 5%);
 		}
 	}
 }

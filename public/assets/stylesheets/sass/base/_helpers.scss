@@ -26,6 +26,12 @@
 	color: $color-muted !important;
 }
 
+html.dark {
+	.text-muted {
+		color: darken( $dark-default-text, 20% ) !important;
+	}
+}
+
 @each $color in $colors-list {
 	.text-#{nth($color,1)} {
 		color: #{nth($color,2)} !important;
@@ -41,19 +47,19 @@
 // WEIGHTS
 // -----------------------------------------------------------------------------
 /* weights */
-.text-light {
+.text-weight-light {
 	font-weight: $font-weight-light;
 }
 
-.text-normal {
+.text-weight-normal {
 	font-weight: $font-weight-normal;
 }
 
-.text-semibold {
+.text-weight-semibold {
 	font-weight: $font-weight-semibold;
 }
 
-.text-bold {
+.text-weight-bold {
 	font-weight: $font-weight-bold;
 }
 

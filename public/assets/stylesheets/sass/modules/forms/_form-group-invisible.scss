@@ -28,9 +28,15 @@
 	.form-control-invisible {
 		&,
 		&:focus,
-		&:active {
+		&:active,
+		& + .bootstrap-tagsinput {
+			background: transparent !important;
 			border-color: transparent !important;
 			box-shadow: none !important;
+		}
+
+		& + .bootstrap-tagsinput {
+			margin-bottom: 4px;
 		}
 	}
 }

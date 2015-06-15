@@ -196,8 +196,23 @@
 
 // DARK SKIN
 // -----------------------------------------------------------------------------\
+/* dark */
 html.dark {
-	.body-sign .panel-sign .panel-body {
-		background-color: $dark-color-4;
+	.body-sign {
+		.panel-sign .panel-body {
+			background-color: $dark-color-4;
+		}
+
+		.line-thru {
+
+			&:before {
+				background-color: $dark-color-4;
+			}
+
+			&:after {
+				border-bottom-color: $dark-color-3;
+			}
+
+		}
 	}
 }

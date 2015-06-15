@@ -40,6 +40,13 @@ textarea {
 	@include placeholder-color(#bdbdbd);
 }
 
+.form-control:focus {
+  border-color: $form-control-border-color;
+  outline: 0;
+  -webkit-box-shadow: $form-control-box-shadow;
+  box-shadow: $form-control-box-shadow;
+}
+
 // DARK - FORM
 // -----------------------------------------------------------------------------
 html.dark {
@@ -360,6 +367,23 @@ html.dark {
 
 		.btn-default {
 			color: #ccc;
+		}
+	}
+}
+
+/* Dark */
+.input-search {
+	width: 100%;
+
+	input.form-control {
+		&:focus {
+			border-color: $dark-color-1;
+		}
+	}
+
+	.input-group-btn {
+		.btn {
+			background: transparent !important;
 		}
 	}
 }
@@ -690,6 +714,19 @@ div.validation-message ul {
 	}
 }
 
+// SELECT2 FIX
+// -----------------------------------------------------------------------------
+.select2-drop-mask {
+    z-index: 10010;
+}
+
+.select2-drop {
+    z-index: 10011;
+}
+
+.select2-search {
+    z-index: 10012;
+}
 
 // DARK - FILE UPLOAD
 // -----------------------------------------------------------------------------

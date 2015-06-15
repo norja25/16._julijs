@@ -76,10 +76,6 @@
 		}
 	}
 
-	.mg-main {
-		background-color: $body-color;
-	}
-
 	.mg-files {
 		padding: 5px 0 30px;
 
@@ -117,7 +113,7 @@
 					bottom: 0;
 					left: 0;
 					right: 0;
-					background-color: rgba(0, 0, 0, 0.7);
+					background-color: rgba(#000, 0.7);
 					visibility: hidden;
 					overflow: hidden;
 
@@ -275,6 +271,23 @@
 			}
 
 		}
+	}
+
+}
+
+// DARK SKIN
+// -----------------------------------------------------------------------------
+html.dark {
+
+	.media-gallery .mg-files .thumbnail {
+
+		&.thumbnail-selected {
+			border-color: $dark-color-5;
+		}
+		.mg-title small {
+			color: $dark-default-text;
+		}
+
 	}
 
 }

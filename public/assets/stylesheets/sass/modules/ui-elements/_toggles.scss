@@ -107,3 +107,12 @@
 		white-space: normal;
 	}
 }
+
+// DARK
+// -----------------------------------------------------------------------------
+/* dark */
+html.dark {
+	.toggle > label {
+		background: $dark-color-3;
+	}
+}

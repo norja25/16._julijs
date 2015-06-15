@@ -83,6 +83,7 @@ html.boxed {
 /* Content With Menu - Inner Menu Style */
 .inner-menu {
 	background: $sidebar-background;
+	border-right: 1px solid darken($dark-color-4, 5%);
 	color: #abb4be;
 	padding: 0;
 	margin: 0;
@@ -239,5 +240,14 @@ html.inner-menu-opened {
 			position: fixed;
 			left: $sidebar-left-full-width;
 		}
+	}
+}
+
+// DARK SKIN
+// -----------------------------------------------------------------------------
+html.dark {
+	.inner-menu-toggle:after,
+	.inner-menu .inner-menu-toggle-inside:after {
+		box-shadow: none;
 	}
 }

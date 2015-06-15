@@ -93,3 +93,13 @@
 	}
 
 }
+
+// DARK SKIN
+// -----------------------------------------------------------------------------
+html.dark {
+	.ui-slider {
+		&.ui-widget-content {
+			background: $dark-color-2;
+		}
+	}
+}

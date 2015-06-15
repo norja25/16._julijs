@@ -398,11 +398,258 @@
 	}
 }
 
+// DARK
+// -----------------------------------------------------------------------------
+/* dark */
+html.dark {
+	.tabs {
+		.nav-tabs li {
+			a,
+			a:focus {
+				border-top-color: $dark-color-3;
+				border-left-color: $dark-color-3;
+				border-right-color: $dark-color-3;
+				background: $dark-color-3;
+			}
+
+			a:hover {
+				border-top-color: $dark-default-text;
+			}
+
+			&.active {
+				a,
+				a:hover,
+				a:focus {
+					border-top-color: $dark-default-text;
+				}
+			}
+		}
+
+		.nav-tabs.nav-justified {
+			border-left-width: 0;
+			border-right-width: 0;
+			border-left-color: transparent;
+			border-right-color: transparent;
+		}
+
+		.nav-tabs.nav-justified li a,
+		.nav-tabs.nav-justified li a:hover,
+		.nav-tabs.nav-justified li a:focus {
+			border-bottom-color: $dark-color-3;
+		}
+
+		&.tabs-left .nav-tabs > li a,
+		&.tabs-right .nav-tabs > li a {
+			background: $dark-color-3;
+			border-left-color: $dark-color-3;
+			border-right-color: $dark-color-3;
+		}
+
+		&.tabs-left .nav-tabs > li:last-child a,
+		&.tabs-right .nav-tabs > li:last-child a {
+			border-bottom-color: $dark-color-3;
+		}
+
+		&.tabs-left {
+			.nav-tabs > li {
+				&.active {
+					a,
+					a:hover,
+					a:focus {
+						border-left: $tabs-nav-item-border-top solid $tabs-nav-default-color;
+					}
+				}
+				a:hover {
+					border-left: $tabs-nav-item-border-top solid $tabs-nav-default-color;
+				}
+			}
+		}
+
+		.nav-tabs {
+			border-color: $dark-color-3;
+		}
+
+		.nav-tabs li.active a,
+		.nav-tabs li.active a:hover,
+		.nav-tabs li.active a:focus,
+		.nav-tabs.nav-justified li.active a,
+		.nav-tabs.nav-justified li.active a:hover,
+		.nav-tabs.nav-justified li.active a:focus {
+			background: $dark-color-4;
+			border-left-color: $dark-color-4;
+			border-right-color: $dark-color-4;
+		}
+
+		.nav-tabs.nav-justified li.active a {
+			border-bottom-color: $dark-color-4;
+		}
+
+		&.tabs-vertical {
+			border-top-color: $dark-color-4;
+		}
+
+		&.tabs-bottom {
+			.nav-tabs li {
+				a,
+				a:focus {
+					border-bottom-color: $dark-color-3;
+					border-top-color: $dark-color-4;
+				}
+
+				a:hover {
+					border-bottom-color: $dark-default-text;
+					border-top-color: $dark-color-4;
+				}
+
+				&.active {
+					a,
+					a:hover,
+					a:focus {
+						border-bottom-color: $dark-default-text;
+						border-top-color: $dark-color-4;
+					}
+				}
+			}
+		}
+
+		.tab-content {
+			background: $dark-color-4;
+			border-color: $dark-color-4;
+		}
+	}
+
+	.tabs-primary {
+		&.tabs-bottom {
+			.nav-tabs {
+				&,
+				&.nav-justified {
+					li {
+						a,
+						a:hover,
+						a:focus {
+							border-top-color: $dark-color-4 !important;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.nav-tabs li.active a,
+	.nav-tabs li.active a:hover,
+	.nav-tabs li.active a:focus,
+	.nav-tabs li a {
+		color: $dark-default-text;
+	}
+	.tab-content {
+		background: $dark-color-4;
+		border-color: $dark-color-1;
+	}
+}
+
 // STATES
 // -----------------------------------------------------------------------------
 /* states */
 @each $state in $states {
-	.tabs-#{nth($state,1)} {
+	html body,
+	html.dark body {
+		.tabs-#{nth($state,1)} {
+			.nav-tabs {
+				&,
+				&.nav-justified {
+					li {
+						a {
+							&,
+							&:hover {
+								color: #{nth($state,2)};
+							}
+
+							&:hover {
+								border-top-color: #{nth($state,2)};
+							}
+						}
+
+						&.active {
+							a,
+							a:hover,
+							a:focus {
+								border-top-color: #{nth($state,2)};
+								color: #{nth($state,2)};
+							}
+						}
+					}
+				}
+			}
+
+			&.tabs-bottom {
+				.nav-tabs {
+					&,
+					&.nav-justified {
+						li {
+							a {
+								&:hover {
+									border-bottom-color: #{nth($state,2)};
+								}
+							}
+
+							&.active {
+								a,
+								a:hover,
+								a:focus {
+									border-bottom-color: #{nth($state,2)};
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&.tabs-vertical {
+				&.tabs-left {
+					li {
+						a {
+							&:hover {
+								border-left-color: #{nth($state,2)};
+							}
+						}
+
+						&.active {
+							a,
+							a:hover,
+							a:focus {
+								border-left-color: #{nth($state,2)};
+							}
+						}
+					}
+				}
+
+				&.tabs-right {
+					li {
+						a {
+							&:hover {
+								border-right-color: #{nth($state,2)};
+							}
+						}
+
+						&.active {
+							a,
+							a:hover,
+							a:focus {
+								border-right-color: #{nth($state,2)};
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// DARK
+// -----------------------------------------------------------------------------
+/* dark */
+html.dark body {
+	.tabs-dark {
 		.nav-tabs {
 			&,
 			&.nav-justified {
@@ -410,11 +657,11 @@
 					a {
 						&,
 						&:hover {
-							color: #{nth($state,2)};
+							color: #FFF;
 						}
 
 						&:hover {
-							border-top-color: #{nth($state,2)};
+							border-top-color: #FFF;
 						}
 					}
 
@@ -422,8 +669,8 @@
 						a,
 						a:hover,
 						a:focus {
-							border-top-color: #{nth($state,2)};
-							color: #{nth($state,2)};
+							border-top-color: #FFF;
+							color: #FFF;
 						}
 					}
 				}
@@ -437,7 +684,7 @@
 					li {
 						a {
 							&:hover {
-								border-bottom-color: #{nth($state,2)};
+								border-bottom-color: #FFF;
 							}
 						}
 
@@ -445,7 +692,7 @@
 							a,
 							a:hover,
 							a:focus {
-								border-bottom-color: #{nth($state,2)};
+								border-bottom-color: #FFF;
 							}
 						}
 					}
@@ -458,7 +705,7 @@
 				li {
 					a {
 						&:hover {
-							border-left-color: #{nth($state,2)};
+							border-left-color: #FFF;
 						}
 					}
 
@@ -466,7 +713,7 @@
 						a,
 						a:hover,
 						a:focus {
-							border-left-color: #{nth($state,2)};
+							border-left-color: #FFF;
 						}
 					}
 				}
@@ -476,7 +723,7 @@
 				li {
 					a {
 						&:hover {
-							border-right-color: #{nth($state,2)};
+							border-right-color: #FFF;
 						}
 					}
 
@@ -484,7 +731,7 @@
 						a,
 						a:hover,
 						a:focus {
-							border-right-color: #{nth($state,2)};
+							border-right-color: #FFF;
 						}
 					}
 				}
