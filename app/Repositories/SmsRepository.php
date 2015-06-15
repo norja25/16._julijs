@@ -36,9 +36,16 @@ class SmsRepository {
         ]);
         $result = $response->getBody();
         $carier = preg_match('/alert\(\s*"(.+?)"\s*\)/', $result, $matches);
-        //return $matches[1];
-        return false;
+       return $matches[1];
+      //  return false;
     }
+
+    public function checkCarrierCountrey($phone)
+    { 
+        $countrey = preg_match('/(\+37.)(.+)/', $phone, $matches);
+       return $matches[1];
+      //  return false;
+    }    
 
     public function sendWellcomeSmsWithPasswordToRegistredUser(User $user, $password)
     {
@@ -76,18 +83,12 @@ class SmsRepository {
 
     public function getSmsGatewayDeviceIdBasedOnCarrier(User $user, $password)
     {
-        $carrier = $this->checkCarrier($user->user_phone);
+        $carrier = $this->checkCarrierCountrey($user->user_phone);
 
         switch ($carrier) {
-            case 'Latvijas Mobilais Telefons':
+            case '+371':
                 return 6507;
-                break;
-            case 'Tele2':
-                return 6507;
-                break;
-            case 'BITE Latvija':
-                return 6507;
-                break;
+                break;          
             default:
                 return false;
         }
