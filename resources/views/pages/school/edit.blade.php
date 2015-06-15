@@ -9,6 +9,7 @@
 <script src="{{ asset('assets/vendor/select2/select2.js') }}"></script>
 <script src="{{ asset('assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
 <script type="text/javascript">
+$('.tabs a[href="' + window.location.hash + '"]').trigger('click');
     /*
     Modal with CSS animation
     */
@@ -254,7 +255,8 @@
                     </div>
                 </div>
             </section>
-        </div>        
+        </div> 
+        <div class="tab-content clearfix"></div>       
         </div>
         <div id="services" class="tab-pane">
             <p>services <code>.nav-tabs.nav-justified</code></p>
